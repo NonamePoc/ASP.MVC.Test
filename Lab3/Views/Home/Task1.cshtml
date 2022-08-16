@@ -1,0 +1,28 @@
+﻿@model Dictionary<int, List<Lab3.Data.Models.Employee>>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Номер цеху</th>
+        <th scope="col">Робітник</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var workGroup in Model)
+    {
+        <tr>
+            <th>@workGroup.Key</th>
+            <th>
+                <ul>
+                    @foreach (var emp in workGroup.Value)
+                    {
+                        <li>
+                            @emp.Code - @emp.LastName
+                        </li>
+                    }
+                </ul>
+            </th>
+        </tr>
+    }
+    </tbody>
+</table>

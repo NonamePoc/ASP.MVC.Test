@@ -1,0 +1,59 @@
+﻿@model HomePageViewModel;
+
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Код працівника</th>
+            <th scope="col">Прізвище</th>
+            <th scope="col">Стать</th>
+            <th scope="col">Номер цеху</th>
+            <th scope="col">Посада</th>
+            <th scope="col">Оклад</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var employee in Model.Employees)
+        {
+            <tr>
+                <td>@employee.Code</td>
+                <td>@employee.LastName</td>
+                <td>@employee.Gender</td>
+                <td>@employee.WorkshopNumber</td>
+                <td>@employee.Position</td>
+                <td>@employee.Salary</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <br/>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Код</th>
+            <th scope="col">Премія</th>
+            <th scope="col">Дата</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var premium in Model.Premiums)
+        {
+            <tr>
+                <th>@premium.EmployeeCode</th>
+                <th>@premium.Value</th>
+                <th>@premium.DateTime.ToShortDateString()</th>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <br/>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <a href="@Url.Action("Task1")" class="form-group btn btn-primary">Задача 1</a>
+        </div>
+        <div class="col">
+            <a href="@Url.Action("Task2")" class="form-group btn btn-primary">Задача 2</a>
+        </div>
+    </div>
+</div>

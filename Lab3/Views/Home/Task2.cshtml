@@ -1,0 +1,17 @@
+﻿@model System.Collections.Generic.Dictionary<string,decimal>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Посада та сумарна зарплата</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var workGroup in Model)
+    {
+        <tr>
+            <th>@workGroup.Key - @workGroup.Value грн.</th>
+        </tr>
+    }
+    </tbody>
+</table>
